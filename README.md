@@ -20,7 +20,7 @@ with a short rationale.
   shadcn-like style.
 
 SQLite instead of Postgres on purpose here: same relational model, but no
-separate database server to install/configure for a 36-hour demo. Swapping
+separate database server to install/configure for demo. Swapping
 to Postgres later would only mean changing `backend/src/db/index.js`.
 
 ## Running it locally
@@ -36,7 +36,7 @@ npm run dev                 # starts API on http://localhost:4000
 ```
 
 **No API key?** The pricing service falls back to a distance-based heuristic
-so the whole app still runs end-to-end without one — useful for quick local
+so the whole app still runs end-to-end without one, useful for quick local
 testing, but the real submission should run with a key set so the AI pricing
 + rationale actually comes from Claude.
 
