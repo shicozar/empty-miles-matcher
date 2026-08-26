@@ -63,3 +63,13 @@ Respond with ONLY a JSON object, no other text:
 }
 
 // Simple fallback so the app is fully runnable without an API key set.
+function heuristicPrice({ legDistanceMiles, score, load }) {
+  const baseRatePerMile = 1.1; // rough backhaul rate
+  let price = legDistanceMiles * baseRatePerMile;
+  if (load.urgency === "urgent") price *= 1.15;
+  price = Math.round(price / 5) * 5; // round to nearest $5
+  return {
+    suggested_price: price,
+    rationale: `Estimated from distance and match quality (${score}/100); set ANTHROPIC_API_KEY for AI-generated pricing.`,
+  };
+}
