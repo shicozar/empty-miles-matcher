@@ -74,5 +74,5 @@ driving that route regardless) plus a one-line rationale.
 ## What's intentionally left out
 
 No auth, no payments, no live geocoding/routing API, no real carrier
-integration — kept out on purpose so the 36 hours went into the matching
+integration — kept out on purpose so the limited time went into the matching
 logic, the pricing story, and a clean demo instead of infrastructure.
