@@ -48,7 +48,7 @@ export default function PostEmptyLeg() {
   return (
     <div className="mx-auto max-w-xl">
       <div className="mb-6">
-        <h2 className="text-lg font-semibold text-slate-900">Post an empty return leg</h2>
+        <h2 className="text-lg font-semibold text-slate-900">For Carrier</h2>
         <p className="mt-1 text-sm text-slate-500">
           Let shippers along this route know your truck is heading back empty.
         </p>
@@ -116,7 +116,7 @@ export default function PostEmptyLeg() {
             )}
 
             <Button type="submit" disabled={submitting} className="w-full">
-              {submitting ? "Posting..." : "Post empty leg"}
+              {submitting ? "Posting..." : "Submit"}
             </Button>
           </form>
         </CardBody>

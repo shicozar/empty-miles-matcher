@@ -2,8 +2,8 @@ import { Truck } from "lucide-react";
 
 const TABS = [
   { id: "matches", label: "Matches" },
-  { id: "post-leg", label: "Post Empty Leg" },
-  { id: "post-load", label: "Post a Load" },
+  { id: "post-leg", label: "For Carriers" },
+  { id: "post-load", label: "For Shippers" },
 ];
 
 export default function Layout({ active, onChange, children }) {

@@ -49,7 +49,7 @@ export default function PostLoad() {
   return (
     <div className="mx-auto max-w-xl">
       <div className="mb-6">
-        <h2 className="text-lg font-semibold text-slate-900">Post a load</h2>
+        <h2 className="text-lg font-semibold text-slate-900">For shippers</h2>
         <p className="mt-1 text-sm text-slate-500">
           Tell us what you need moved — we'll check it against trucks already heading that way.
         </p>
@@ -121,7 +121,7 @@ export default function PostLoad() {
             )}
 
             <Button type="submit" disabled={submitting} className="w-full">
-              {submitting ? "Posting..." : "Post load"}
+              {submitting ? "Posting..." : "Submit"}
             </Button>
           </form>
         </CardBody>
