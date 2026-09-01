@@ -55,6 +55,33 @@ Open `http://localhost:5173`. The **Matches** tab loads first and shows the
 seeded matches. Use **Post Empty Leg** / **Post a Load** to add your own and
 watch new matches appear.
 
+## Deploying (Render)
+
+### Backend — Render Web Service
+
+- **Root directory:** `backend`
+- **Build command:** `npm install`
+- **Start command:** `npm start`
+- **Environment variables:**
+  - `ANTHROPIC_API_KEY` — for Claude pricing (omit to use the heuristic fallback).
+  - `FRONTEND_ORIGIN` — comma-separated list of allowed frontend origins for CORS,
+    e.g. `https://my-frontend.onrender.com,http://localhost:5173`.
+  - `PORT` is set automatically by Render — no need to configure it.
+
+Render's free tier can reset the filesystem (and with it the SQLite file) on
+redeploy or after the service spins down from inactivity. The server auto-seeds
+demo data on boot whenever the database is empty, so the app always comes back
+up with matches to show instead of an empty database.
+
+### Frontend — Render Static Site
+
+- **Root directory:** `frontend`
+- **Build command:** `npm run build`
+- **Publish directory:** `dist`
+- **Environment variable:**
+  - `VITE_API_BASE` — the deployed backend URL plus `/api`,
+    e.g. `https://my-backend.onrender.com/api`.
+
 ## How matching works
 
 `backend/src/services/matcher.js` — a simple, explainable rule-based scorer,
